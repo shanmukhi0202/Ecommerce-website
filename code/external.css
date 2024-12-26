@@ -6,7 +6,7 @@
     position: relative;
     left: 300px;
     margin-right: 40px;
-    font-size: 15px;
+    font-size: 18px;
 }
 .button{
     position: relative;
@@ -55,12 +55,28 @@
     display: flex;
     justify-content: space-between;
 }
-.img-styles{
-    /* border: 1px solid black; */
-}
 .caption{
-    font-weight: ;
+    font-weight: 500;
     font-size: 20px;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+}
+.product-imgs>figure{
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 7px;
+}
+.img-styles{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+
+}
+/* Footer */
+.footer{
+    font-size: 17px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+.footer u{
+    font-size: 18px;
 }
