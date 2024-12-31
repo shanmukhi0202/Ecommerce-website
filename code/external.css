@@ -70,6 +70,40 @@
     border-top-right-radius: 7px;
 
 }
+/* contact us page */
+.contactUs-container{
+    margin-left: 620px;
+}
+.contactUs-container p{
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.contact-boxes{
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 5px;
+    padding-left: 10px;
+    width: 350px;
+    height: 40px;
+}
+#contact-message{
+    text-align: start;
+    height: 200px;
+}
+ #contact-message::placeholder{
+    position: relative;
+    transform: translateY(-85px);
+    line-height: 1px; 
+ }
+ .sendBtn{
+    margin-left: 765px;
+    margin-top: 25px;
+    border: none;
+    color: white;
+    background-color: grey;
+    border-radius: 5px;
+    height: 35px;
+    width: 80px;
+ }
 /* Footer */
 .footer{
     font-size: 17px;
@@ -78,5 +112,14 @@
     text-align: center;
 }
 .footer u{
+    font-size: 18px;
+}
+.contact-footer{
+    font-size: 17px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    margin-left: 680px;
+}
+.contact-footer{
     font-size: 18px;
 }
