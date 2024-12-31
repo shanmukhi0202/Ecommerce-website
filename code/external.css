@@ -27,7 +27,9 @@
     padding-right: 8px;
     padding-left: 5px;
 }
-
+.line{
+    margin-bottom: 35px;
+}
 
 /* About Us page */
 .aboutUs{
@@ -120,6 +122,6 @@
     margin-bottom: 35px;
     margin-left: 680px;
 }
-.contact-footer{
+.contact-footer u{
     font-size: 18px;
 }
