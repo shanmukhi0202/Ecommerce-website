@@ -66,7 +66,25 @@
     justify-content: center;
     
 }
-
+#productsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+}
+#productsContainer .productCard{
+    width: 450px; 
+    border: 1px solid black;   
+    border-radius: 5px;
+    text-align: center;
+    padding: 7px;
+ }
+ .productCard img{
+    width: 100%;
+    height: 190px;
+    object-fit: contain;      
+}
 /* About Us page */
 .aboutUs{
     margin-top: 30px;
