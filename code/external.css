@@ -34,10 +34,9 @@
 .banner{
     background-image: url("../imgs/main.png.jpg");
     height: 450px;
-    background-position: 100%;
-    width: 1472px;
-    position: relative;
-    left: 15px;
+    background-position: 100%; 
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .home-img{
     position: relative;
@@ -45,7 +44,7 @@
     font-size: 45px;
     font-weight: lighter;
     color: white;
-    left: 40px;
+    margin-left: 40px;
     
 }
 .banner-content{
@@ -56,6 +55,18 @@
     top: 140px;
     font-size: 30px;
 }
+.latestProducts{
+    font-size: 45px;
+    margin-top: 30px;
+    font-weight: lighter;
+    text-align: center;
+}
+.categoryBtn{
+    display: flex;
+    justify-content: center;
+    
+}
+
 /* About Us page */
 .aboutUs{
     margin-top: 30px;
