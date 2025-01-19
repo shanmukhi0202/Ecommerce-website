@@ -64,18 +64,19 @@
 .categoryBtn{
     display: flex;
     justify-content: center;
+    margin-top: 60px;
     
 }
 #productsContainer{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 25px;
     padding-bottom: 50px;
     padding-left: 20px;
 }
 #productsContainer .productCard{
-    width: 450px; 
-    border: 1px solid black;   
+    width: 350px;
+    border: 1px solid rgb(177, 175, 175);   
     border-radius: 5px;
     text-align: center;
     padding: 7px;
@@ -178,4 +179,7 @@
 }
 .contact-footer u{
     font-size: 18px;
+}
+.home-footer{
+    text-align: center;
 }
