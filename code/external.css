@@ -188,6 +188,8 @@
 }
 
 /* cart page */
+
+
 .cart-empty {
     height: 300px;
     text-align: center;
@@ -294,7 +296,7 @@
 color: rgb(10, 3, 3);
 font-family: bold;
 font-size: 20px;
-margin-left: 170px;
+margin-left: 150px;
 }
 #shipping-cost{
 color: rgb(10, 3, 3);
@@ -306,9 +308,9 @@ margin-left: 190px;
 color: rgb(10, 3, 3);
 font-family: bold;
 font-size: 20px;
-margin-left: 220px;
+margin-left: 170px;
 }
 .btn-light-custom:hover {
-    background-color: rgb(89, 228, 24);
+    background-color: black;
     color: white;
 }
