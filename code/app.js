@@ -2,8 +2,9 @@
     let productData = []; 
     const updateCartDisplay = () => {
         const cartButton = document.querySelector('.button span'); 
-        cartButton.textContent = (`${cart.length}`); 
+        cartButton.textContent = `(${cart.length})`; 
     };
+    
     const displayProducts = (category) => {
         let filteredProducts = productData;
         if (category !== "All") {

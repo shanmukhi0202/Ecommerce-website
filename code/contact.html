@@ -11,9 +11,7 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="../code/external.css" rel="stylesheet">
-
 </head>
-
 <body>
     <!--Headers Section -->
     <section id="navbar">
@@ -30,7 +28,7 @@
                     <a class="nav-link" href="./index.html">Home</a>
                     <a class="nav-link" href="./product.html">Products</a>
                     <a class="nav-link" href="./about.html">About</a>
-                    <a class="nav-link" href="./contact.html ">Contact</a>
+                    <a style="color: black;" class="nav-link" href="./contact.html ">Contact</a>
                     <a href="./login.html"><button class="button"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
                     <a href="./register.html"><button class="button"><i class="fa-solid fa-user-plus"></i>Register</button></a>
                     <a href="./cart.html"><button class="button"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
@@ -42,14 +40,15 @@
     <h1 class="aboutUs">Contact Us</h1><hr class="line">
     <div class="contactUs-container">
     <p>Name</p>
-    <input class="contact-boxes" type="name" placeholder="Enter your name">
+    <input class="form-control me-2" type="name" placeholder="Enter Your Name" aria-label="Search">
     <p>Email</p>
-    <input class="contact-boxes" type="email" placeholder="name@example.com">
+    <input class="form-control me-2" type="email" placeholder="name@example.com" aria-label="Search">
     <p>Message</p>
-    <input id="contact-message" class="contact-boxes" type="message" placeholder="Enter your message">
+    <input class="form-control me-2" type="message" placeholder="Enter your message" aria-label="Search">
     </div>
     <button class="sendBtn">Send</button>
     <p class="contact-footer">Made with ❤️ by <u>Shanmukhi</u></p>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
