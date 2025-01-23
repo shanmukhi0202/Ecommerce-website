@@ -14,9 +14,10 @@
 
 </head>
 
-<body>
+<body> 
     <!--Headers Section -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <section id="navbar">
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Ecommerce</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -25,21 +26,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-                    <a class="nav-link" href="./index.html">Home</a>
+                    <!-- <a class="nav-link active" aria-current="page" href="#">Home</a>  -->
+                     <a class="nav-link" href="./index.html">Home</a>
                     <a class="nav-link" href="./product.html">Products</a>
                     <a class="nav-link" href="./about.html">About</a>
                     <a class="nav-link" href="./contact.html ">Contact</a>
                     <a href="./login.html"><button class="button"><i class="fa-solid fa-right-to-bracket"></i>Login</button></a>
                     <a href="./register.html"><button class="button"><i class="fa-solid fa-user-plus"></i>Register</button></a>
-                    <a href=""><button class="button"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
+                    <a href="./cart.html"><button class="button"><i class="fa-solid fa-cart-shopping"></i>Cart<span> (0)</span></button></a>
                 </div>
             </div>
         </div>
     </nav>
-    <section class="banner">
-        <!-- <img src="../imgs/main.png.jpg" width="100%"> -->
-         <p class="home-img">New Season Arrivals</p>
+    </section>
+    <section class="banner"> 
+          <p class="home-img">New Season Arrivals</p>
         <p class="banner-content">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a
             little bit longer.</p>
     </section>
@@ -53,14 +54,101 @@
         <button class="btn btn-outline-dark me-2">Women's Clothing</button>
         <button class="btn btn-outline-dark me-2">Jewelery</button>
         <button class="btn btn-outline-dark me-2">Electronics</button>
-     </div>
+     </div> 
      <!-- products display container  -->
-     <div id="productsContainer"> </div>
-     <script src="app.js"></script>
+      <div id="productsContainer"> </div>
+     <!-- <script src="app.js"></script> -->
     <p class="home-footer">Made with ❤️ by <u>Shanmukhi</u></p>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
+
+<script>
+      let cart = JSON.parse(localStorage.getItem('cart')) || []; 
+    let productData = []; 
+    const updateCartDisplay = () => {
+        const cartButton = document.querySelector('.button span'); 
+        cartButton.textContent = (`${cart.length}`); 
+    };
+    const displayProducts = (category) => {
+        let filteredProducts = productData;
+        if (category !== "All") {
+            filteredProducts = productData.filter(product => product.category === category);
+        }
+
+        const containerCards = filteredProducts.map((product) => {
+            return `
+            <div class="productCard card">
+                <img class="fw-3 pb-2 card-img-top" src="${product.image}" alt="${product.title}">
+                <div class="card-body border-bottom">
+                    <h5>${product.title.substring(0, 12)}...</h5>
+                    <p>${product.description.substring(0, 50)}...</p>
+                </div>
+                <div class="priceSection pt-2">
+                    <p>$ ${product.price}</p>
+                </div>
+                <div class="card-body border-top">
+                    <button class="btn btn-dark me-2 details-btn" data-id="${product.id}">Details</button>
+                    <button class="btn btn-dark me-2 add-to-cart-btn" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="${product.image}">Add to Cart</button>    
+                </div>
+            </div>
+            `;
+        });
+
+        const container = document.getElementById('productsContainer');
+        container.innerHTML = containerCards.join("");
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        addToCartButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                const productId = event.target.getAttribute('data-id');
+                const productTitle = event.target.getAttribute('data-title');
+                const productPrice = parseFloat(event.target.getAttribute('data-price'));
+                const productImage = event.target.getAttribute('data-image');
+                const existingProduct = cart.find((item) => item.id === productId);
+                if (existingProduct) {
+                    existingProduct.quantity += 1; 
+                } else {
+                    cart.push({ id: productId, title: productTitle, price: productPrice, image: productImage, quantity: 1 });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart)); 
+                updateCartDisplay();
+                alert(`${productTitle} has been added to your cart!`);
+            });
+        });
+        const detailButtons = document.querySelectorAll('.details-btn');
+        detailButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                const productId = event.target.getAttribute('data-id');
+                alert(`Details for product ID: ${productId}`);
+            });
+        });
+    };
+    fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((data) => {
+            productData = data;
+            displayProducts("All"); 
+            const categoryButtons = document.querySelectorAll('.categoryBtn button');
+            categoryButtons.forEach((button) => {
+                button.addEventListener('click', (event) => {
+                    const category = event.target.textContent.trim();
+                    let apiCategory;
+                    if (category === "Men's Clothing") apiCategory = "men's clothing";
+                    else if (category === "Women's Clothing") apiCategory = "women's clothing";
+                    else if (category === "Jewelery") apiCategory = "jewelery";
+                    else if (category === "Electronics") apiCategory = "electronics";
+                    else apiCategory = "All";
+                    displayProducts(apiCategory);
+                });
+            });
+        })
+        .catch((error) => {
+            alert("Error loading products: " + error);
+        });
+    updateCartDisplay();
+
+
+</script>

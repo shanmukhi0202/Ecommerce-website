@@ -1,4 +1,10 @@
 /* Headers Section */
+#navbar{
+    /* position: fixed; */
+    /* width: 100%; */
+    /* z-index: 1000; */
+    /* margin-top: -30px; */
+}
 .container-fluid{
     height: 60px;
 }
@@ -17,6 +23,10 @@
     height: 30px;
     margin-left: 20px;
     padding-right: 10px;
+}
+.button:hover{
+    background-color: black;
+    color: white;
 }
 .navbar-brand{
     font-size: 30px;
@@ -182,4 +192,126 @@
 }
 .home-footer{
     text-align: center;
+}
+
+/* cart page */
+.cart-empty {
+    height: 300px;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: black;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    font-size: 50px;
+    font-weight: lighter;
+}
+.cart-empty p{
+    margin-top: 60px;
+}
+.order-summary {
+    width: 400px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.btn-custom {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+.product-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+}
+
+.product-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.product-details img {
+    width: 175px;
+    height: 100px;
+    margin-left: 20px;
+    border: none;
+}
+.product-details p {
+    margin-right: 120px;
+    margin-left: 60px;
+
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+.quantity-controls button {
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.quantity-controls span {
+    margin: 0 10px;
+}
+
+.btn-dark-custom {
+    background-color: black;
+    color: white;
+}
+
+.btn-light-custom {
+    border: 2px solid black;
+}
+.remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.remove-btn:hover {
+    background-color: #c82333;
+}
+#products-price{
+color: rgb(10, 3, 3);
+font-family: bold;
+font-size: 20px;
+margin-left: 170px;
+}
+#shipping-cost{
+color: rgb(10, 3, 3);
+font-family: bold;
+font-size: 20px;
+margin-left: 190px;
+}
+#total-amount{
+color: rgb(10, 3, 3);
+font-family: bold;
+font-size: 20px;
+margin-left: 220px;
 }
